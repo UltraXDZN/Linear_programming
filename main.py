@@ -26,7 +26,19 @@ class Constraints():
         THIS IS A TEMPORARY SOLUTION,
         need to find a way to choose a selected operator without using a if statements. (Hopefully via dictionary.
         """
-        if ">" in type_of_constraint:
+
+        if ">=" in type_of_constraint:
+            if self.calculate_constraint(self.constraints[constraint_id].a, self.constraints[constraint_id].b, 0) >= \
+                    self.constraints[constraint_id].c:
+                return "down"
+            return "up"
+        elif "<=" in type_of_constraint:
+            if self.calculate_constraint(self.constraints[constraint_id].a, self.constraints[constraint_id].b, 0) <= \
+                    self.constraints[constraint_id].c:
+                return "down"
+            return "up"
+
+        elif ">" in type_of_constraint:
             if self.calculate_constraint(self.constraints[constraint_id].a, self.constraints[constraint_id].b, 0) > \
                     self.constraints[constraint_id].c:
                 return "up"
@@ -34,17 +46,6 @@ class Constraints():
 
         elif "<" in type_of_constraint:
             if self.calculate_constraint(self.constraints[constraint_id].a, self.constraints[constraint_id].b, 0) < \
-                    self.constraints[constraint_id].c:
-                return "down"
-            return "up"
-
-        elif ">=" in type_of_constraint:
-            if self.calculate_constraint(self.constraints[constraint_id].a, self.constraints[constraint_id].b, 0) >= \
-                    self.constraints[constraint_id].c:
-                return "up"
-            return "down"
-        elif "<=" in type_of_constraint:
-            if self.calculate_constraint(self.constraints[constraint_id].a, self.constraints[constraint_id].b, 0) <= \
                     self.constraints[constraint_id].c:
                 return "down"
             return "up"
