@@ -94,13 +94,13 @@ if __name__ == "__main__":
     Y = []
 
     for count in range(N):
-        x = M * (2 * random() - 1)
-        y = M * (2 * random() - 1)
+        x = 1.1 * M * (2 * random() - 1)
+        y = 1.1 * M * (2 * random() - 1)
         z = a_param * x + b_param * y
         if ops[inequality[3]](z, c_param):
             X.append(x)
             Y.append(y)
-    plt.scatter(X, Y, s=1, c='red', alpha=0.5)
+    plt.plot(X, Y, c='red', alpha=0.3, linewidth=3)
     # plt.show()
     plt.show()
 
@@ -108,3 +108,4 @@ if __name__ == "__main__":
 # 5x + 7y >= 0
 # 2x - 3y = -6
 # 1x + 3y < 9
+# 69x + 420y >= 0
